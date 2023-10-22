@@ -28,8 +28,7 @@ const LandingPage = () => {
         <h1>Interactive 3D Model Viewer</h1>
         <p>Welcome to Daniel's Interactive 3D Model Viewer for Simacro.</p>
         <div className="buttons-container">
-        <button className="start-button" onClick={handleStart}>Start as Guest</button>
-          <button className="login-button" onClick={handleLogin}>Start with Email</button>
+        <button className="start-button" onClick={handleStart}>Start</button>
         </div>
         <div className="footer">User Guide and Code Repository can be found <a href="https://github.com/danielhan00/simacro-app">here.</a></div>
       </header>

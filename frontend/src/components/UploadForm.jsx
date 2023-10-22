@@ -1,6 +1,8 @@
 import React, { createRef } from 'react';
 
-function SettingsBar() {
+// when a file is uploaded, filenames should be appended.
+// at the initial state, nothing happens until UploadForm is triggered.
+function UploadForm() {
   const fileInput = createRef();
  
   const onSubmit = async (e) => {
@@ -26,16 +28,15 @@ function SettingsBar() {
   };
       
 
-
+  console.log("avatar");
   return (
     <div>
-      <h1>File Upload App</h1>
       <form onSubmit={onSubmit}>
-        <input type="file" name="avatar" ref={fileInput}></input>
+        <input type="file" name="avatar" accept=".glb" ref={fileInput}></input>
         <input type="submit" value="submit"></input>
       </form>
     </div>
   );
 }
 
-export default SettingsBar;
+export default UploadForm;

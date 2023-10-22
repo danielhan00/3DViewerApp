@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import NavBar from "./NavBar";
 import RenderObject from "./RenderObject";
-import SettingsBar from "./SettingsBar";
 
 const CreatePage = () => {
   return (
     <div>
-      <SettingsBar></SettingsBar>
-      <RenderObject modelUrl={'/totoro.glb'}/>
+      <NavBar />
+      <RenderObject modelUrl={"totoro.glb"}></RenderObject>
     </div>
   );
 };
