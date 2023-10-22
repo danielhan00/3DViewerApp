@@ -8,7 +8,6 @@ import '../styles/LandingPage.css';
 //      - Title/Description
 //      - Login
 //      - Start Button
-
 const LandingPage = () => {
   // React Router's useNavigate
   const history = useNavigate();

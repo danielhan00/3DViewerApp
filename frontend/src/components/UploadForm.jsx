@@ -1,7 +1,6 @@
 import React, { createRef } from 'react';
 
-// when a file is uploaded, filenames should be appended.
-// at the initial state, nothing happens until UploadForm is triggered.
+// Component to handle user upload and interaction with backend server.
 function UploadForm() {
   const fileInput = createRef();
  

@@ -1,5 +1,6 @@
 import React from "react";
 
+// Handles lighting changes.
 const Lighting = ({ setLightType, isLightHighlighted }) => {
   const handleLightTypeChange = (type) => {
     setLightType(type);

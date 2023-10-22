@@ -2,6 +2,10 @@ import React, { createRef } from "react";
 import "../styles/NavBar.css";
 import UploadForm from "./UploadForm";
 
+/*
+    NavBar component
+    - Creates a NavBar that has a title and two functional buttons.
+*/
 function NavBar() {
   return (
     <nav className="navbar">

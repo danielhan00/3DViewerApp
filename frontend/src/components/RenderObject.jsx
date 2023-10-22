@@ -5,7 +5,12 @@ import Model from "./renderHelp/Model";
 import Lighting from "./renderHelp/Lighting";
 import "../styles/RenderObject.css";
 
+/* 
+Component to render Three.js canvas.
+    - modelUrl: filePath of desired glb model to be rendered 
+*/
 const RenderObject = ({ modelUrl }) => {
+
   // settings consts for background color and lightType
   const [backgroundColor, setBackgroundColor] = useState("#7E8A6A");
   const [lightType, setLightType] = useState("ambient");
