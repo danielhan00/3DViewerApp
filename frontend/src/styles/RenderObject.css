@@ -1,0 +1,41 @@
+.container {
+  border: 10px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.renderBox {
+  width: 90.5%;
+  border: 5px solid #000;
+  margin: 10px;
+  margin-top: 0px;
+  box-sizing: border-box;
+  height: 700px;
+}
+
+.box2 {
+  width: 120px; 
+  border: 1px solid #000; 
+  padding: 10px; 
+  margin-left: 0px;
+  box-sizing: border-box;
+  margin-right: 20px;
+  height: 250px;
+}
+
+.highlighted-button {
+  background-color: yellow;
+}
+
+.filename-label {
+  width: 10%;
+  border: 5px solid #000; 
+  border-bottom: 0px;
+  margin: 0px; 
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 3px;
+  padding-left: 6px;
+}
