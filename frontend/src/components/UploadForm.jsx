@@ -1,7 +1,9 @@
-import React, { createRef } from 'react';
+import React, { createRef, useContext } from 'react';
+import { FilesContext } from "../contexts/FileContextProvider";
 
 // Component to handle user upload and interaction with backend server.
 function UploadForm() {
+  const {fetchFilenames} = useContext(FilesContext)
   const fileInput = createRef();
  
   const onSubmit = async (e) => {
@@ -17,7 +19,9 @@ function UploadForm() {
 
       if (response.ok) {
         alert("File uploaded successfully!");
+        fetchFilenames();
       }
+
       else {
         console.error("File could not upload");
       }

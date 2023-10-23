@@ -10,8 +10,10 @@ const app = express();
 const profile = require("./profile");
 const fs = require("fs");
 const path = require("path");
+const cors = require("cors");
 
-app.use("/profile", profile);
+
+app.use("/profile", profile, cors);
 
 const port = +process.env.PORT || 3000;
 app.listen(port, () => {
