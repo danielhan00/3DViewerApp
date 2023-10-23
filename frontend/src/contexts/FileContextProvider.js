@@ -11,7 +11,7 @@ const FileContextProvider = ({children})=>{
   
   
     const fetchFilenames = useCallback(() => {
-      fetch("/api/filenames") // Assumes your API is running on the same domain
+      fetch("http://localhost:8000/api/filenames") // Assumes your API is running on the same domain
         .then((response) => {
           if (!response.ok) {
             throw new Error("Request failed");
