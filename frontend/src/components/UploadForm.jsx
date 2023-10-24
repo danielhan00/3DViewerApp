@@ -1,42 +1,51 @@
-import React, { createRef, useContext } from 'react';
+import React, { createRef, useContext , useState} from 'react';
+import { projectFirestore, projectStorage } from '../config/config'
 import { FilesContext } from "../contexts/FileContextProvider";
+import "../styles/UploadForm.css";
 
-// Component to handle user upload and interaction with backend server.
 function UploadForm() {
-  const {fetchFilenames} = useContext(FilesContext)
-  const fileInput = createRef();
- 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.set("avatar", fileInput.current.files[0]);
+  
 
-    try {
-      const response = await fetch("/profile", {
-        method: "POST",
-        body: formData
-      });
+ const [thumbnail, setThumbnail] = useState(null)
+ const [isPending, setisPending] = useState(false)
+ const {fetchFilenames, current} = useContext(FilesContext)
 
-      if (response.ok) {
-        alert("File uploaded successfully!");
-        fetchFilenames();
-      }
+ const handleFileUpload = (e) =>{
+  const selected = e.target.files[0] 
+  setThumbnail(selected)
+ }
+  
+ const onSubmit = async (e) =>{
+    e.preventDefault()
+    alert("upload image")
+    setisPending(true)
+    const uploadPath = `thumbnails/${thumbnail.name}`
+  const img =  await projectStorage.ref(uploadPath).put(thumbnail)
+  const imgURL = await img.ref.getDownloadURL()
 
-      else {
-        console.error("File could not upload");
-      }
-    }catch (e) {
-      console.error(e.message);
+   // creating a file
+   const doc = { name: thumbnail.name, imgURL }
+    try{
+     
+      await projectFirestore.collection("files").add(doc)
+      fetchFilenames()
+      console.log("file uploaded")
+      setisPending(false)
     }
-  };
-      
+    catch(err){
+      console.log(err)
+      setisPending(false)
+    }
 
-  console.log("avatar");
+ 
+ }
+
   return (
-    <div>
+    <div className="submit">
       <form onSubmit={onSubmit}>
-        <input type="file" name="avatar" accept=".glb" ref={fileInput}></input>
-        <input type="submit" value="submit"></input>
+        <input type="file"  onChange={handleFileUpload}/>
+        {!isPending && <button>Upload</button>}
+        {isPending && <button disabled>Uploading</button>}
       </form>
     </div>
   );

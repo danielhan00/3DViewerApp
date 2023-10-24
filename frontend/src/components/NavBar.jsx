@@ -1,6 +1,39 @@
-import React, { createRef } from "react";
+import React, { useState, useContext } from "react";
+import { FilesContext } from "../contexts/FileContextProvider";
 import "../styles/NavBar.css";
 import UploadForm from "./UploadForm";
+
+const DropdownMenu = ({ items }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+const {filenames, getCurrentImg} = useContext(FilesContext)
+
+const handleClick = (id) =>{
+ 
+    getCurrentImg(id)
+}
+
+  return (
+    <div className="dropdown-menu">
+      <button onClick={toggleDropdown} className="dropdown-button">
+        Other Files
+      </button>
+      {/* {isDropdownOpen && ( */}
+        <ul className="dropdown-list">
+          {filenames.map((filename, index) => (
+            <li key={index} className="dropdown-item" onClick={() =>handleClick(filename.id)}>
+              {filename.name}
+            </li>
+          ))}
+        </ul>
+      {/* )} */}
+    </div>
+  );
+};
 
 /*
     NavBar component
@@ -14,7 +47,7 @@ function NavBar() {
       </div>
       <div className="navbar-buttons">
         <UploadForm></UploadForm>
-        <button className="button">All Uploaded Files</button>
+        <DropdownMenu></DropdownMenu>
       </div>
     </nav>
   );

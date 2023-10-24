@@ -1,43 +1,58 @@
-import {useState, createContext, useEffect, useCallback} from "react"
+import { useState, createContext, useEffect, useCallback } from "react";
+import { projectFirestore } from "../config/config";
 
 
-export const FilesContext = createContext()
-const FileContextProvider = ({children})=>{
-    const [filenames, setFilenames] = useState([]);
+export const FilesContext = createContext();
+// ... (previous code remains unchanged)
 
-    // get json from the api
-    // store json objects as strings of filenames in an array
-    // use that array to determine what to render
-  
-  
-    const fetchFilenames = useCallback(() => {
-      fetch("http://localhost:8000/api/filenames") // Assumes your API is running on the same domain
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Request failed");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log("API Response:", data);
-          setFilenames(data.filenames);
-        })
-        .catch((error) => {
-          console.error("Error fetching filenames:", error);
-        });
-      }, []);
-  
-    useEffect(() => {
-      // Listen for changes in filenames from the server
-      // Initial fetch of filenames
-      fetchFilenames();
-    }, [fetchFilenames]);
-    //const fetch = useCallback(())
-    return(
-    <FilesContext.Provider value={{filenames, fetchFilenames}}>
-            {children}
+const FileContextProvider = ({ children }) => {
+  const [filenames, setFilenames] = useState([]);
+  const [error, setError] = useState("");
+  const [isPending, setIsPending] = useState(false);
+  const [current, setCurrent] = useState(null); // Initialize with null
+
+  const getCurrentImg = (id) => {
+    const selected = filenames.find((file) => file.id === id);
+    setCurrent(selected);
+  };
+
+  const fetchFilenames = useCallback(() => {
+    setIsPending(true);
+    const unsub = projectFirestore.collection("files").onSnapshot(
+      (snapshot) => {
+        if (snapshot.empty) {
+          setError("No files to fetch yet");
+          setIsPending(false);
+        } else {
+          const results = [];
+          snapshot.docs.forEach((doc) => {
+            results.push({ id: doc.id, ...doc.data() });
+          });
+          setFilenames(results);
+          setIsPending(false);
+          // Set the current to the first item after filenames have been fetched
+          setCurrent(results[0] || null); // Make sure to handle case where results is empty
+        }
+      },
+      (err) => {
+        setError(err.message);
+        setIsPending(false);
+      }
+    );
+    return () => unsub();
+  }, []);
+
+  useEffect(() => {
+    fetchFilenames();
+  }, [fetchFilenames]);
+
+  return (
+    <FilesContext.Provider
+      value={{ filenames, fetchFilenames, error, getCurrentImg, current, isPending }}
+    >
+      {children}
     </FilesContext.Provider>
-    )
-}
+  );
+};
 
-export default FileContextProvider
+export default FileContextProvider;

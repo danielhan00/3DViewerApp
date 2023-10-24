@@ -15,12 +15,17 @@ const cors = require("cors");
 
 app.use("/profile", profile, cors);
 
-const port = +process.env.PORT || 8000;
+const port = 8000;
 app.listen(port, () => {
   console.log("server is running at " + port);
 });
 
 app.use("/assets", express.static("assets"));
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+  mode: 'no-cors'
+}));
 
 // Define the route to retrieve filenames
 app.get("/api/filenames", (req, res) => {
