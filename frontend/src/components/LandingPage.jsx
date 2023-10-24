@@ -29,7 +29,7 @@ const LandingPage = () => {
         <div className="buttons-container">
         <button className="start-button" onClick={handleStart}>Start</button>
         </div>
-        <div className="footer">User Guide and Code Repository can be found <a href="https://github.com/danielhan00/simacro-app">here.</a></div>
+        <div className="footer">User Guide and Code Repository can be found <a href="https://github.com/danielhan00/3DViewerApp">here.</a></div>
       </header>
     </div>
   );

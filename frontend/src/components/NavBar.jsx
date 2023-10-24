@@ -3,7 +3,7 @@ import { FilesContext } from "../contexts/FileContextProvider";
 import "../styles/NavBar.css";
 import UploadForm from "./UploadForm";
 
-const DropdownMenu = ({ items }) => {
+const DropdownMenu = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -22,7 +22,7 @@ const handleClick = (id) =>{
       <button onClick={toggleDropdown} className="dropdown-button">
         Other Files
       </button>
-      {/* {isDropdownOpen && ( */}
+      {isDropdownOpen && (
         <ul className="dropdown-list">
           {filenames.map((filename, index) => (
             <li key={index} className="dropdown-item" onClick={() =>handleClick(filename.id)}>
@@ -30,7 +30,7 @@ const handleClick = (id) =>{
             </li>
           ))}
         </ul>
-      {/* )} */}
+      )} 
     </div>
   );
 };
@@ -43,7 +43,7 @@ function NavBar() {
   return (
     <nav className="navbar">
       <div className="navbar-title">
-        <h1>My App</h1>
+        <h1 style={{color: "white"}}>3D Model Viewer</h1>
       </div>
       <div className="navbar-buttons">
         <UploadForm></UploadForm>

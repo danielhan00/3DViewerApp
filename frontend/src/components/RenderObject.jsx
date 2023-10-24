@@ -13,7 +13,9 @@ const RenderObject = ({ modelUrl }) => {
     setBackgroundColor(e.target.value);
   };
 
-  const filename = modelUrl.split("/").pop();
+  // extracting the filename from the modelUrl (doing this manually)
+  const filename = modelUrl.substring(84, modelUrl.length - 53);
+  
   const isLightHighlighted = (type) =>
     lightType === type ? "highlighted-button" : "";
 
@@ -88,7 +90,6 @@ const RenderObject = ({ modelUrl }) => {
           />
           <br />
           <button onClick={handleDownloadImage}>Download Image</button>{" "}
-          {/* Step 4: Add the download button */}
         </div>
       </div>
     </div>

@@ -5,38 +5,18 @@ import { FilesContext } from "../contexts/FileContextProvider";
 
 // Renders the CreatePage.
 const CreatePage = () => {
+  const { filenames, isPending, getCurrentImg, current } =
+    useContext(FilesContext);
 
-  const { filenames, isPending, getCurrentImg, current } = useContext(FilesContext)
-
-
-  console.log("current", current)
-  const fileList = filenames?.map(file => {
-    return (
-      <li key={file.id}>
-        <p>{file.name}</p>
-      </li>
-    )
-  })
-
-
+  console.log("current", current);
 
   return (
     <div>
       <NavBar />
       {filenames?.length > 0 && (
-        <div>
-          <div>
-            <ul>
-              {fileList}
-            </ul>
-          </div>
-          <RenderObject
-            modelUrl={current?.imgURL}
-          ></RenderObject>
-        </div>
-      ) }
-        {isPending && <p>Loading files</p>}
-
+        <RenderObject modelUrl={current?.imgURL}></RenderObject>
+      )}
+      {isPending && <p>No files. Please Upload Above!</p>}
     </div>
   );
 };
