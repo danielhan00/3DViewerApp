@@ -29,6 +29,8 @@ At the highest level, the ModelViewApp is a web app that allows a user to upload
     - Currently, duplicate file uploads are supported but DELETIONS are not.
 - Users can click the "All Files" button to select another file they wish to render. 
     - On each file option, users have the ability to delete the model from the site.
+- Once finished, users should remove their images in the All Files dropdown menu.
+
 
 
 # Code Design Choices
