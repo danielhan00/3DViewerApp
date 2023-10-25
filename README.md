@@ -1,6 +1,6 @@
 # ModelViewApp - Simacro Interview
 
-Thanks for checking this project out! This project was built in 5 days for a a simacro technical interview.
+Thanks for checking this project out! This project was built in 5 days for a a Simacro technical interview.
 
 At the highest level, the ModelViewApp is a web app that allows a user to upload one or more .glb 3D model files and then view and manipulate the rendered model.
 
