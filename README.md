@@ -13,6 +13,7 @@ At the highest level, the ModelViewApp is a web app that allows a user to upload
 
 1. Head to this link: https://3-d-viewer-app.vercel.app/
 - No need to run or set anything up on your system! This app lives on Vercel for the frontend and Google Cloud services (firebase) for the backend.
+2. Only one user should use the app at a time (want to add a user authentication feature eventually)
   
 # User Guide:
 
