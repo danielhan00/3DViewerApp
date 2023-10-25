@@ -28,7 +28,7 @@ const DeleteFileButton = ({ file }) => {
   };
 
   return (
-    <button onClick={handleDelete}>Delete</button>
+    <button onClick={handleDelete}>X</button>
   );
 };
 

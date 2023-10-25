@@ -55,10 +55,11 @@ const RenderObject = ({ modelUrl }) => {
       <div className="filename-label">{filename}</div>
       <div className="container">
         <div className="renderBox">
+          {/* 3D Model React Three Canvas*/}
           <Canvas
             dpr={[1, 2]}
             shadows={{}}
-            camera={{ position: [0, 50, 50], fov: 45 }}
+            camera={{ fov: 45 }}
             ref={canvasRef}
             gl={{ preserveDrawingBuffer: true }}
           >

@@ -19,6 +19,8 @@
   border-radius: 10px;
   background-color: #a3e0c6;
   margin: auto;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .submit-form {
