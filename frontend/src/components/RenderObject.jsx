@@ -15,7 +15,7 @@ const RenderObject = ({ modelUrl }) => {
 
   // extracting the filename from the modelUrl (doing this manually)
   const filename = modelUrl.substring(84, modelUrl.length - 53);
-  
+
   const isLightHighlighted = (type) =>
     lightType === type ? "highlighted-button" : "";
 
@@ -50,7 +50,6 @@ const RenderObject = ({ modelUrl }) => {
     }
   };
 
-
   return (
     <div>
       <div className="filename-label">{filename}</div>
@@ -73,9 +72,12 @@ const RenderObject = ({ modelUrl }) => {
             {getLight()}
           </Canvas>
         </div>
-        <div className="box2">
+
+        {/* Options box to change 3D Render Settings*/}
+        <div className="options-box">
           <div>
-            <label htmlFor="backgroundColor">Background:</label>
+            <label htmlFor="backgroundColor">Background</label>
+            <br />
             <input
               type="color"
               id="backgroundColor"

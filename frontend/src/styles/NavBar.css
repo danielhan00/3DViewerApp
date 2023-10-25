@@ -1,82 +1,92 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .navbar-title {
-    flex-grow: 1;
-    text-align: center;
-  }
-  
-  .navbar-title h1 {
-    font-size: 24px;
-    margin: 0;
-  }
-  
-  .navbar-buttons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
+.title {
+  color: white;
+  text-align: left;
+}
 
-  .dropdown-menu {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropdown-button {
-    background: #0074d9;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  .dropdown-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: block;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
-    z-index: 1;
-    width: 200px; /* Adjust the width as needed */
-    text-align: right;
-  }
-  
-  .dropdown-item {
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    color: black;
-    text-align: right;
-  }
-  
-  .dropdown-item:hover {
-    background-color: #f0f0f0;
-  }
-  
-  
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  height: 70px;
+}
+
+.navbar-title {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.navbar-title h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.dropdown-menu {
+  position: relative;
+  display: inline-block;
+  margin: auto;
+}
+
+.dropdown-button {
+  border: 3px solid #000000;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: #a3e0c6;
+  padding: 15px;
+  margin: auto;
+}
+
+.dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: block;
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 5px;
+  z-index: 1;
+  text-align: right;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: black;
+  text-align: right;
+  border: 1px solid #000;
+}
+
+.dropdown-item:hover {
+  background-color: #C5C7C1;
+}
+
+.dropdown-icon {
+  height: 8px;
+  width: 16px;
+}

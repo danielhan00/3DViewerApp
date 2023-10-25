@@ -1,10 +1,26 @@
 .submit {
-    background-color: white;
-    border: 3px solid #000000;
-    padding: 10px;
-    border-radius: 10px;
-  }
+  background-color: white;
+  border: 3px solid #000000;
+  padding: 10px;
+  border-radius: 10px;
+  height: 40px;
+  margin: auto;
+}
 
-  .file-input {
-    color: black;
-  }
+.file-input-name {
+  color: black;
+  margin: auto;
+  padding-right: 0px;
+}
+
+.file-loading-button {
+  border: 3px solid #000000;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: #a3e0c6;
+  margin: auto;
+}
+
+.submit-form {
+  margin: auto;
+}

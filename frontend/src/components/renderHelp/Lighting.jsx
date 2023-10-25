@@ -7,8 +7,8 @@ const Lighting = ({ setLightType, isLightHighlighted }) => {
   };
 
   return (
-    <div className="childSettings">
-      <label>Lighting: </label>
+    <div>
+      <label>Lighting</label>
       <button
         className={isLightHighlighted("directional")}
         onClick={() => handleLightTypeChange("directional")}

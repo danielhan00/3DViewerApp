@@ -8,7 +8,7 @@ export const FilesContext = createContext();
 const FileContextProvider = ({ children }) => {
   const [filenames, setFilenames] = useState([]);
   const [error, setError] = useState("");
-  const [isPending, setIsPending] = useState(false);
+  const [isPending, setIsPending] = useState(true);
   const [current, setCurrent] = useState(null); // Initialize with null
 
   const getCurrentImg = (id) => {
@@ -17,12 +17,11 @@ const FileContextProvider = ({ children }) => {
   };
 
   const fetchFilenames = useCallback(() => {
-    setIsPending(true);
     const unsub = projectFirestore.collection("files").onSnapshot(
       (snapshot) => {
         if (snapshot.empty) {
           setError("No files to fetch yet");
-          setIsPending(false);
+          setIsPending(true);
         } else {
           const results = [];
           snapshot.docs.forEach((doc) => {
@@ -36,7 +35,7 @@ const FileContextProvider = ({ children }) => {
       },
       (err) => {
         setError(err.message);
-        setIsPending(false);
+        setIsPending(true);
       }
     );
     return () => unsub();
