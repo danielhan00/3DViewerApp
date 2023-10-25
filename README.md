@@ -1,17 +1,22 @@
 # ModelViewApp - Simacro Interview
 
-This project was built in 5 days for a technical interview.
+Thanks for checking this project out! This project was built in 5 days for a a simacro technical interview.
 
 At the highest level, the ModelViewApp is a web app that allows a user to upload one or more .glb 3D model files and then view and manipulate the rendered model.
 
+# Table of Contents
+- [How to Run the App]()
+- [User Guide]()
+- [Code Design Choices]()
 
 # How to Run the App:
 
-1. No need to run or set anything up! This app lives on Vercel for the frontend and Google Cloud services (firebase) for the backend.
+1. Head to this link: https://3-d-viewer-app.vercel.app/
+- No need to run or set anything up! This app lives on Vercel for the frontend and Google Cloud services (firebase) for the backend.
+- 
+# User Guide:
 
-# Functionality:
-
-1. Start page, landing page takes the user to a create page.
+1. Start page (landing page) takes the user to a create page.
 2. Create page:
 - Upload and submit a .glb file.
 - That file will render as a 3D model.
@@ -19,8 +24,18 @@ At the highest level, the ModelViewApp is a web app that allows a user to upload
 - Change the model's background color and basic lighting settings.
 - Save the current render frame as a jpg file by clicking the save as image button.
 - Users can choose to upload more files.
-- Users can click the "Other models" button to select another file they wish to render. 
+    - Currently, duplicate file uploads are supported but DELETIONS are not.
+- Users can click the "All Files" button to select another file they wish to render. 
+    - On each file option, users have the ability to delete the model from the site.
 
+
+# Code Design Choices
+- The front end is built with react three fiber, a jsx extension of Three.js.
+    - I did this so that building the react components would be more logical.
+- A node backend does exist (pre-existing code is left in the backend section of the repo). After consideration of the extra feature criterion, however, I ended up hooking the front end up to Firebase and Google Cloud services.
+    - Firebase cloud storage and firestore database are used.
+    - Performance suffers due to the get/fetch time of the sometimes quite large file sizes. 
+- Other larger choices were made with the project criteria in mind.
 
 
 
