@@ -8,7 +8,7 @@ At the highest level, the ModelViewApp is a web app that allows a user to upload
 - [How to Run the App](https://github.com/danielhan00/3DViewerApp/blob/main/README.md#how-to-run-the-app)
 - [User Guide](https://github.com/danielhan00/3DViewerApp/blob/main/README.md#user-guide)
 - [Code Design Choices](https://github.com/danielhan00/3DViewerApp/blob/main/README.md#code-design-choices)
-- [Code Design Choices](https://github.com/danielhan00/3DViewerApp/blob/main/README.md#project-checklist)
+- [Project Checklist](https://github.com/danielhan00/3DViewerApp/blob/main/README.md#project-checklist)
 
 # How to Run the App:
 
