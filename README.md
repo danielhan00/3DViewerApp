@@ -36,7 +36,7 @@ At the highest level, the ModelViewApp is a web app that allows a user to upload
 # Code Design Choices
 - The front end is built with react three fiber, a jsx extension of Three.js.
     - I did this so that building the react components would be more logical.
-- A node backend does exist (pre-existing code is left in the backend section of the repo). After consideration of the extra feature criterion, however, I ended up hooking the front end up to Firebase and Google Cloud services.
+- A node backend does exist (pre-existing code is left in the backend section of the repo). After consideration of the extra feature criterion, however, I ended up hooking the front end up to Firebase database and Google Cloud storage services.
     - Firebase cloud storage and firestore database are used.
     - Performance suffers due to the get/fetch time of the sometimes quite large file sizes. 
 - Other larger choices were made with the project criteria in mind.
