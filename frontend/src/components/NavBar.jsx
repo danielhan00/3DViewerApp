@@ -17,26 +17,6 @@ const DropdownMenu = () => {
     getCurrentImg(id);
   };
 
-  const handleDelete = async (file) => {
-    try {
-      // Reference to the file in Firebase Storage
-      const storageRef = firebase.storage().ref().child(`thumbnails/${file.name}`);
-
-      // Reference to the document in Cloud Firestore
-      const firestoreRef = firebase.firestore().collection("files").doc(file.id);
-
-      // Delete the file from Firebase Storage
-      await storageRef.delete();
-
-      // Delete the corresponding document from Cloud Firestore
-      await firestoreRef.delete();
-
-      console.log("File and Firestore document deleted successfully.");
-    } catch (error) {
-      console.error("Error deleting file and Firestore document:", error);
-    }
-  };
-
   return (
     <div className="dropdown-menu">
       <button onClick={toggleDropdown} className="dropdown-button">
