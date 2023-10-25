@@ -40,22 +40,22 @@ At the highest level, the ModelViewApp is a web app that allows a user to upload
 - Other larger choices were made with the project criteria in mind.
 
 # Project Checklist
-1. [] The web application should have a landing page with a brief introduction and a "Start" button.
-2. [] Upon clicking the "Start" button, users should be taken to a page where they can upload a GLB 3D model file.
-3. [] The uploaded 3D model should be displayed in a Three.js canvas on the page.
-4. [] Users should be able to rotate, pan, and zoom in/out to interact with the 3D model.
-5. [] Implement basic lighting and shading effects to enhance the 3D model's appearance.
-6. [] Add a sidebar or menu that allows users to toggle different lighting settings (e.g., ambient, directional, point light).
-7. [] Implement a feature that allows users to change the background color of the 3D model's environment.
-8. [] Create a simple Node.js backend to handle file uploads and serve the React.js frontend.
-9. [] Ensure the code is well-documented and organized following best practices.
+1. COMPLETE: The web application should have a landing page with a brief introduction and a "Start" button.
+2. COMPLETE:  Upon clicking the "Start" button, users should be taken to a page where they can upload a GLB 3D model file.
+3. COMPLETE:  The uploaded 3D model should be displayed in a Three.js canvas on the page.
+4. COMPLETE:  Users should be able to rotate, pan, and zoom in/out to interact with the 3D model.
+5. COMPLETE:  Implement basic lighting and shading effects to enhance the 3D model's appearance.
+6. COMPLETE:  Add a sidebar or menu that allows users to toggle different lighting settings (e.g., ambient, directional, point light).
+7. COMPLETE:  Implement a feature that allows users to change the background color of the 3D model's environment.
+8. COMPLETE:  Create a simple Node.js backend to handle file uploads and serve the React.js frontend.
+9. COMPLETE:  Ensure the code is well-documented and organized following best practices.
     
 Optional Enhancements
-(Bug) Implement animations for the 3D model.
-[] Allow users to switch between different GLB 3D models.
-[] Add the ability to take screenshots or save the current view of the 3D model.
-(Not implemented) Implement user authentication to save and retrieve user-specific settings.
-[] Deploy the application to a cloud platform (e.g., AWS, Heroku).
+- (Bug) Implement animations for the 3D model.
+- COMPLETE:  Allow users to switch between different GLB 3D models.
+- COMPLETE:  Add the ability to take screenshots or save the current view of the 3D model.
+- (Not implemented) Implement user authentication to save and retrieve user-specific settings.
+- COMPLETE:  Deploy the application to a cloud platform (e.g., AWS, Heroku).
 
 Small Note:
 https://github.com/danielhan00/simacro-app is where I did most of the frontend work, I needed to migrate the React app to this repo to be able to hook up the back and front end together!
