@@ -3,6 +3,11 @@ import firebase from "firebase/app";
 import "firebase/storage";
 import "firebase/firestore";
 
+/**
+ * Deletes a given file reference from firebase cloud storage and cloud firestore.
+ * @param {*} file a file reference to be deleted. 
+ * @returns 
+ */
 const DeleteFileButton = ({ file }) => {
   const handleDelete = async () => {
     try {
@@ -21,9 +26,8 @@ const DeleteFileButton = ({ file }) => {
       // Reload the page
       window.location.reload();
       
-      console.log("File and Firestore document deleted successfully.");
     } catch (error) {
-      console.error("Error deleting file and Firestore document:", error);
+      alert("Error deleting file and Firestore document:", error);
     }
   };
 

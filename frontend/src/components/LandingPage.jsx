@@ -1,13 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import '../styles/LandingPage.css';
+import "../styles/LandingPage.css";
 
-// Landing Page component
-//
-// Three main components of the main component:
-//      - Title/Description
-//      - Login
-//      - Start Button
+/**
+ * Landing Page component
+ * Three main components of the main component:
+ * - Title/Description
+ * - Login
+ * - Start Button
+ * @returns jsx
+ */
 const LandingPage = () => {
   // React Router's useNavigate
   const history = useNavigate();
@@ -16,10 +18,6 @@ const LandingPage = () => {
   const handleStart = () => {
     history("/create");
   };
-  const handleLogin = () => {
-    // TODO: Add logic for what happens when the start button is clicked!
-    alert("You clicked the Login button!");
-  };
 
   return (
     <div className="landing-page">
@@ -27,9 +25,14 @@ const LandingPage = () => {
         <h1>Interactive 3D Model Viewer</h1>
         <p>Welcome to Daniel's Interactive 3D Model Viewer for Simacro.</p>
         <div className="buttons-container">
-        <button className="start-button" onClick={handleStart}>Start</button>
+          <button className="start-button" onClick={handleStart}>
+            Start
+          </button>
         </div>
-        <div className="footer">User Guide and Code Repository can be found <a href="https://github.com/danielhan00/3DViewerApp">here.</a></div>
+        <div className="footer">
+          User Guide and Code Repository can be found{" "}
+          <a href="https://github.com/danielhan00/3DViewerApp">here.</a>
+        </div>
       </header>
     </div>
   );

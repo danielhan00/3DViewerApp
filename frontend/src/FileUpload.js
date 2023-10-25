@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
+/**
+ * Used for upload to a local node server. 
+ * @returns jsx
+ */
 const FileUpload = () => {
   const [file, setFile] = useState(null);
 

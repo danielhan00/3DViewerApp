@@ -1,13 +1,18 @@
-import React, { createRef, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { projectFirestore, projectStorage } from "../config/config";
 import { FilesContext } from "../contexts/FileContextProvider";
 import "../styles/UploadForm.css";
 
+/**
+ * Component to handle user upload to and from firebase.
+ * @returns jsx
+ */
 function UploadForm() {
   const [thumbnail, setThumbnail] = useState(null);
   const [isPending, setisPending] = useState(false);
-  const { fetchFilenames, current } = useContext(FilesContext);
+  const { fetchFilenames } = useContext(FilesContext);
 
+  // handles firebase file uploading.
   const handleFileUpload = (e) => {
     const selected = e.target.files[0];
     setThumbnail(selected);
@@ -21,15 +26,13 @@ function UploadForm() {
     const img = await projectStorage.ref(uploadPath).put(thumbnail);
     const imgURL = await img.ref.getDownloadURL();
 
-    // creating a file
+    // creating a file as a reference for firebase operations.
     const doc = { name: thumbnail.name, imgURL };
     try {
       await projectFirestore.collection("files").add(doc);
       fetchFilenames();
-      console.log("file uploaded");
       setisPending(false);
     } catch (err) {
-      console.log(err);
       setisPending(false);
     }
   };

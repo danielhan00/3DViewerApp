@@ -1,10 +1,12 @@
 import { useState, createContext, useEffect, useCallback } from "react";
 import { projectFirestore } from "../config/config";
 
-
 export const FilesContext = createContext();
-// ... (previous code remains unchanged)
 
+/**
+ * A "global variable" that handles all the file information that can be called from anywhere in the app.
+ * Allows front end to continuously have the latest information about files. 
+ */
 const FileContextProvider = ({ children }) => {
   const [filenames, setFilenames] = useState([]);
   const [error, setError] = useState("");
@@ -29,8 +31,7 @@ const FileContextProvider = ({ children }) => {
           });
           setFilenames(results);
           setIsPending(false);
-          // Set the current to the first item after filenames have been fetched
-          setCurrent(results[0] || null); // Make sure to handle case where results is empty
+          setCurrent(results[0] || null); 
         }
       },
       (err) => {

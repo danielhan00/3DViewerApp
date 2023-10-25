@@ -3,12 +3,13 @@ import NavBar from "./NavBar";
 import RenderObject from "./RenderObject";
 import { FilesContext } from "../contexts/FileContextProvider";
 
-// Renders the CreatePage.
+/**
+ * Create page react page with a nav bar and possible RenderObject component.
+ * @returns jsx
+ */
 const CreatePage = () => {
-  const { filenames, isPending, getCurrentImg, current } =
+  const { filenames, isPending, current } =
     useContext(FilesContext);
-
-  console.log("current", current);
 
   return (
     <div>

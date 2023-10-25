@@ -9,6 +9,7 @@ router.use(fileUpload());
 
 const upload = multer({ dest: "uploads/" });
 
+// handles actual upload to a local node server through the current profile. 
 router.post("/upload", upload.single("glbFile"), (req, res) => {
   const uploadedFile = req.file;
   const filePath = uploadedFile.path;

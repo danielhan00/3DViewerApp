@@ -5,6 +5,11 @@ import Model from "./renderHelp/Model";
 import Lighting from "./renderHelp/Lighting";
 import "../styles/RenderObject.css";
 
+/**
+ * Handles all aspects of rendering a 3D model from initial model creation to customization of the model.
+ * @param {string} modelUrl
+ * @returns
+ */
 const RenderObject = ({ modelUrl }) => {
   const [backgroundColor, setBackgroundColor] = useState("#7E8A6A");
   const [lightType, setLightType] = useState("ambient");
@@ -21,6 +26,7 @@ const RenderObject = ({ modelUrl }) => {
 
   const canvasRef = useRef();
 
+  // Handles when the Download Image button is pressed by converting the current canvas to a downloadable jpg file.
   const handleDownloadImage = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -37,6 +43,7 @@ const RenderObject = ({ modelUrl }) => {
     });
   };
 
+  // Gets current light according to a toggle-able lightType.
   const getLight = () => {
     switch (lightType) {
       case "directional":

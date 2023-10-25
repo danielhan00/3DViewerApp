@@ -17,7 +17,6 @@ app.use("/profile", profile, cors);
 
 const port = 8000;
 app.listen(port, () => {
-  console.log("server is running at " + port);
 });
 
 app.use("/assets", express.static("assets"));
@@ -32,7 +31,6 @@ app.get("/api/filenames", (req, res) => {
   const assetsDirectory = path.join(__dirname, "assets");
   fs.readdir(assetsDirectory, (err, files) => {
     if (err) {
-      console.error("Error reading directory:", err);
       return res.status(500).json({ error: "Unable to read directory" });
     }
 

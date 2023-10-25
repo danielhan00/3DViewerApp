@@ -2,6 +2,8 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import "firebase/storage";
+
+// Firebase requirements.
 const firebaseConfig = {
   apiKey: "AIzaSyB-Fexg168VD0nzGhzzT0h1VDFjMnMeK-A",
   authDomain: "modelviewapp.firebaseapp.com",

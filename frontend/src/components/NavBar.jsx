@@ -4,6 +4,10 @@ import "../styles/NavBar.css";
 import UploadForm from "./UploadForm";
 import DeleteFileButton from "./DeleteFileButton";
 
+/**
+ * Dropdown menu helper component used in the NavBar. 
+ * @returns jsx.
+ */
 const DropdownMenu = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -40,10 +44,11 @@ const DropdownMenu = () => {
   );
 };
 
-/*
-    NavBar component
-    - Creates a NavBar that has a title and two functional buttons.
-*/
+/**
+ * Navigation Bar component for the top of the Create page.
+ * Holds a Title, Upload form component, and a dropdown menu.
+ * @returns jsx
+ */
 function NavBar() {
   return (
     <nav className="navbar">
