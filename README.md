@@ -5,15 +5,15 @@ Thanks for checking this project out! This project was built in 5 days for a a s
 At the highest level, the ModelViewApp is a web app that allows a user to upload one or more .glb 3D model files and then view and manipulate the rendered model.
 
 # Table of Contents
-- [How to Run the App]()
-- [User Guide]()
-- [Code Design Choices]()
+- [How to Run the App](https://github.com/danielhan00/3DViewerApp/blob/main/README.md#how-to-run-the-app)
+- [User Guide](https://github.com/danielhan00/3DViewerApp/blob/main/README.md#user-guide)
+- [Code Design Choices](https://github.com/danielhan00/3DViewerApp/blob/main/README.md#code-design-choices)
 
 # How to Run the App:
 
 1. Head to this link: https://3-d-viewer-app.vercel.app/
-- No need to run or set anything up! This app lives on Vercel for the frontend and Google Cloud services (firebase) for the backend.
-- 
+- No need to run or set anything up on your system! This app lives on Vercel for the frontend and Google Cloud services (firebase) for the backend.
+  
 # User Guide:
 
 1. Start page (landing page) takes the user to a create page.
