@@ -15,7 +15,7 @@ function UploadForm() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    alert("Uploaded file!");
+    alert("Currently uploading file!");
     setisPending(true);
     const uploadPath = `thumbnails/${thumbnail.name}`;
     const img = await projectStorage.ref(uploadPath).put(thumbnail);
