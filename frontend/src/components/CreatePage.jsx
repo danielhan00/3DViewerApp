@@ -4,7 +4,7 @@ import RenderObject from "./RenderObject";
 import { FilesContext } from "../contexts/FileContextProvider";
 
 /**
- * Create page react page with a nav bar and possible RenderObject component.
+ * Create page component parent with a nav bar and possible RenderObject component.
  * @returns jsx
  */
 const CreatePage = () => {

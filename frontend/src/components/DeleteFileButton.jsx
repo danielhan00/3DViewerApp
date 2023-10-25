@@ -23,7 +23,7 @@ const DeleteFileButton = ({ file }) => {
       // Delete the corresponding document from Cloud Firestore
       await firestoreRef.delete();
 
-      // Reload the page
+      // Reload the page to retrieve latest objects
       window.location.reload();
       
     } catch (error) {

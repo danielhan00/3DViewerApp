@@ -5,7 +5,7 @@ export const FilesContext = createContext();
 
 /**
  * A "global variable" that handles all the file information that can be called from anywhere in the app.
- * Allows front end to continuously have the latest information about files. 
+ * Allows front end to continuously have the latest information about files from anywhere and anytime.
  */
 const FileContextProvider = ({ children }) => {
   const [filenames, setFilenames] = useState([]);
