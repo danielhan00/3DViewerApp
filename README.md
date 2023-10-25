@@ -7,8 +7,7 @@ At the highest level, the ModelViewApp is a web app that allows a user to upload
 
 # How to Run the App:
 
-1. Instructions
-2. Here
+1. No need to run or set anything up! This app lives on Vercel for the frontend and Google Cloud services (firebase) for the backend.
 
 # Functionality:
 
