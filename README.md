@@ -26,11 +26,10 @@ At the highest level, the ModelViewApp is a web app that allows a user to upload
 - Change the model's background color and basic lighting settings.
 - Save the current render frame as a jpg file by clicking the save as image button.
 - Users can choose to upload more files.
-    - Currently, duplicate file uploads are NOT supported. A known bug is that duplicates will disrupt the app as of Oct 25 2023.
+    - Currently, duplicate file uploads are supported!
 - Users can click the "All Files" button to select another file they wish to render. 
     - On each file option, users have the ability to delete the model from the site.
-- Once finished, users should remove their images in the All Files dropdown menu.
-
+    - Additionally, users can delete all files currently in the app. 
 
 
 # Code Design Choices
