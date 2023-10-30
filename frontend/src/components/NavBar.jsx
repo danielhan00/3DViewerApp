@@ -3,9 +3,10 @@ import { FilesContext } from "../contexts/FileContextProvider";
 import "../styles/NavBar.css";
 import UploadForm from "./UploadForm";
 import DeleteFileButton from "./DeleteFileButton";
+import DeleteAllFilesButton from "./DeleteAllFilesButton";
 
 /**
- * Dropdown menu helper component used in the NavBar. 
+ * Dropdown menu helper component used in the NavBar.
  * @returns jsx.
  */
 const DropdownMenu = () => {
@@ -38,6 +39,9 @@ const DropdownMenu = () => {
               <DeleteFileButton file={filename} />
             </li>
           ))}
+          <li>
+            <DeleteAllFilesButton></DeleteAllFilesButton>
+          </li>
         </ul>
       )}
     </div>

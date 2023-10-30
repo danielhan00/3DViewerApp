@@ -18,7 +18,7 @@ const DeleteFileButton = ({ file }) => {
       const firestoreRef = firebase.firestore().collection("files").doc(file.id);
       
       // Delete the file from Firebase Storage
-      await storageRef.delete();
+      // await storageRef.delete();
 
       // Delete the corresponding document from Cloud Firestore
       await firestoreRef.delete();
