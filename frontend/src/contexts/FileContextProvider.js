@@ -11,7 +11,7 @@ const FileContextProvider = ({ children }) => {
   const [filenames, setFilenames] = useState([]);
   const [error, setError] = useState("");
   const [isPending, setIsPending] = useState(true);
-  const [current, setCurrent] = useState(null); // Initialize with null
+  const [current, setCurrent] = useState(null);
 
   const getCurrentImg = (id) => {
     const selected = filenames.find((file) => file.id === id);
