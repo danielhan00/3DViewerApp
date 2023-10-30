@@ -6,7 +6,7 @@ import { FilesContext } from "../contexts/FileContextProvider";
 import "../styles/DeleteAllFilesButton.css";
 
 /**
- * Deletes a given file reference from firebase cloud storage and cloud firestore.
+ * Deletes all file reference from firebase cloud storage and cloud firestore.
  */
 const DeleteAllsFilesButton = () => {
   const { filenames } = useContext(FilesContext);
