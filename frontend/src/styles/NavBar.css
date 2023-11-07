@@ -29,20 +29,6 @@
   gap: 10px;
 }
 
-.button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: #0056b3;
-}
-
 .dropdown-menu {
   position: relative;
   display: inline-block;

@@ -39,7 +39,7 @@ const DeleteAllsFilesButton = () => {
     }
   };
 
-  return <button className="button" onClick={handleDelete}>Delete All Files</button>;
+  return <button className="delete-files-button" onClick={handleDelete}>Delete All Files</button>;
 };
 
 export default DeleteAllsFilesButton;

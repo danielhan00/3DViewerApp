@@ -1,0 +1,12 @@
+.empty-message-box {
+    border: 5px solid #000;
+    margin: 10px;
+    width: 50%;
+    box-sizing: border-box;
+    background-color: #a3e0c6;
+}
+
+.empty-message {
+    text-align: center;
+    color: black;
+}

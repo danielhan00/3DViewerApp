@@ -21,10 +21,10 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
-      <header className="header">
-        <h1>Interactive 3D Model Viewer</h1>
-        <p>Welcome to Daniel's Interactive 3D Model Viewer for Simacro.</p>
-        <div className="buttons-container">
+      <header className="landing-header">
+        <div className="landing-title">Interactive 3D Model Viewer</div>
+        <div className="landing-description">Welcome to Daniel's Interactive 3D Model Viewer for Simacro.</div>
+        <div className="landing-buttons">
           <button className="start-button" onClick={handleStart}>
             Start
           </button>
