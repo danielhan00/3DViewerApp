@@ -7,7 +7,7 @@
 
 .renderBox {
   width: 90.5%;
-  border: 5px solid #000;
+  border: 3px solid #000;
   margin: 10px;
   margin-top: 0px;
   box-sizing: border-box;
@@ -15,14 +15,47 @@
 }
 
 .options-box {
-  width: 120px; 
-  border: 4px solid #000; 
-  padding: 10px; 
-  margin-left: 0px;
-  box-sizing: border-box;
-  margin-right: 20px;
-  height: 250px;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 120px;
+    margin-right: 20px;
+  }
+
+  .options-box label {
+    font-weight: bold;
+    padding-top: 10px;
+  }
+
+  .options-box input[type="color"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .options-box .Lighting {
+    margin: 10px 0;
+  }
+
+  .options-box button {
+    background-color: #0074cc;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 3px;
+  }
+
+  .options-box button:hover {
+    background-color: #0058a1;
+  }
 
 .highlighted-button {
   background-color: yellow;
@@ -30,7 +63,7 @@
 
 .filename-label {
   background: 'light-gray';
-  border: 5px solid #000; 
+  border: 3px solid #000; 
   border-bottom: 0px;
   margin: 10px; 
   box-sizing: border-box;
@@ -40,5 +73,7 @@
   padding-right: 12px;
   width: max-content;
   background-color: #D3D3D3;
+  border-radius: 10px;
 }
+
 

@@ -84,7 +84,7 @@ const RenderObject = ({ modelUrl }) => {
         {/* Options box to change 3D Render Settings*/}
         <div className="options-box">
           <div>
-            <label htmlFor="backgroundColor">Background</label>
+            <label for="backgroundColor">Background</label>
             <br />
             <input
               type="color"
@@ -93,13 +93,14 @@ const RenderObject = ({ modelUrl }) => {
               onChange={handleBackgroundColorChange}
             />
           </div>
-          <br />
+          <label for="lighting">Lighting</label>
           <Lighting
             setLightType={setLightType}
             isLightHighlighted={isLightHighlighted}
           />
-          <br />
-          <button onClick={handleDownloadImage}>Download Image</button>{" "}
+
+          <label for="downloadImage">Download</label>
+          <button onClick={handleDownloadImage}>Download Image</button>
         </div>
       </div>
     </div>
